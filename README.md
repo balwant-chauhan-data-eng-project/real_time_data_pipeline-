@@ -22,11 +22,14 @@ step 6
   setup the the spark-streaming.py which will help you to connect with kafka and cassandra using spark session
 
 step 7
-  perfrom read_stream on kafka and perform write_stream in cassandra 
+  Download this two MVN package (spark-cassandra-connector_2.13:3.4.1)      (spark-sql-kafka-0-10_2.13:3.4.1) 
 
 step 8
+  perfrom read_stream on kafka and perform write_stream in cassandra 
+
+step 9
  submit the job to master 
 
-step 9 
+step 10 
 validate data is streaming in cassandra or not 
 
