@@ -1,35 +1,88 @@
-# real_time_data_pipeline-
+# Real-Time Data Pipeline 🚀
 
-![Data engineering architecture](https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/assets/167126710/e4965a6e-c562-4a6d-b06b-716c1bc6a849)
+![Data Engineering Architecture](https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/assets/167126710/e4965a6e-c562-4a6d-b06b-716c1bc6a849)
 
+---
 
-step 1
-  setup an ec2 and in there run dependency-scripts.sh
+## Step-by-Step Guide to Set Up Your Real-Time Data Pipeline 🛠️
 
-step 2
-  reconfigure docker-compose.yaml according to your need and run it 
+### Step 1: Set Up EC2 Instance 🖥️
+- **Launch an EC2 instance** and make sure it's configured properly with the necessary resources.
+- **Run the setup script**:  
+  - Download and execute `dependency-scripts.sh` on the EC2 instance to install the required dependencies (e.g., Kafka, Spark, Cassandra).
 
-step 3
-  setup the dag with real_time_data_pipeline-/dags/kafka_stream.py
+---
 
-step 4
-  open port 8080,9021 you can open other as well  on the basis of your need 
+### Step 2: Configure Docker 🐳
+- **Customize the Docker Compose file**:  
+  - Open the `docker-compose.yaml` file and adjust it according to your project needs (services, ports, volumes, etc.).
+- **Run Docker Compose**:  
+  - Execute the command to start all services defined in the `docker-compose.yaml`:
+    ```bash
+    docker-compose up
+    ```
 
-step 5
-  run the kafka_stream.py it will publish the data to your_ec2_ip:9021
+---
 
-step 6
-  setup the the spark-streaming.py which will help you to connect with kafka and cassandra using spark session
+### Step 3: Set Up Your DAG for Airflow 🎛️
+- **Create a new DAG**:  
+  - Use the provided DAG in `real_time_data_pipeline-/dags/kafka_stream.py` for scheduling and monitoring Kafka streaming jobs via Apache Airflow.
 
-step 7
-  Download this two MVN package (spark-cassandra-connector_2.13:3.4.1)      (spark-sql-kafka-0-10_2.13:3.4.1) 
+---
 
-step 8
-  perfrom read_stream on kafka and perform write_stream in cassandra 
+### Step 4: Open Required Ports 🔓
+- **Expose the necessary ports**:  
+  - Open ports `8080` (Airflow) and `9021` (Kafka UI) in your EC2 security groups.
+  - If needed, open other ports based on the services you plan to use.
 
-step 9
- submit the job to master 
+---
 
-step 10 
-validate data is streaming in cassandra or not 
+### Step 5: Run Kafka Stream Producer 📡
+- **Execute the Kafka stream script**:  
+  - Run `kafka_stream.py`, which will start publishing data to your EC2 instance's IP address on port `9021`.
+    ```bash
+    python kafka_stream.py
+    ```
+
+---
+
+### Step 6: Configure Spark Streaming with Kafka and Cassandra 🔗
+- **Set up the Spark streaming job**:  
+  - In the `spark-streaming.py` file, configure the connection between Kafka and Cassandra using a Spark session.
+
+---
+
+### Step 7: Download Required Maven Packages 📦
+- **Install the necessary Spark connectors**:  
+  - Download these Maven packages to enable Spark to interact with Cassandra and Kafka:
+    - `spark-cassandra-connector_2.13:3.4.1`
+    - `spark-sql-kafka-0-10_2.13:3.4.1`
+
+---
+
+### Step 8: Read from Kafka and Write to Cassandra 📝
+- **Read the data stream from Kafka**:  
+  - Use the `read_stream()` function in Spark to fetch real-time data from Kafka.
+- **Write the data to Cassandra**:  
+  - Perform a `write_stream()` operation to send the processed data into Cassandra for storage.
+
+---
+
+### Step 9: Submit the Spark Job 🚀
+- **Submit the Spark streaming job**:  
+  - Once the Spark script is ready, submit the job to the master node to begin real-time data processing.
+    ```bash
+    spark-submit --master your_master_node spark-streaming.py
+    ```
+
+---
+
+### Step 10: Validate the Data in Cassandra ✅
+- **Check if the data is being streamed**:  
+  - After the job runs, verify that the data is being properly streamed and stored in Cassandra by querying the database.
+
+---
+
+By following these steps, you'll have a fully functional real-time data pipeline using EC2, Kafka, Spark, Cassandra, and Airflow! 🎉
+
 
